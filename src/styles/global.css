@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-card: #111111;
+  --color-elevated: #1a1a1a;
+  --color-text: #e5e5e5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #525252;
+  --color-border: #262626;
+  --color-border-hover: #404040;
+  --color-accent: #ffffff;
+  --color-accent-alt: #a3a3a3;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+}
+
+/* ── Base ────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Gradient text utility ───────────────────── */
+.gradient-text {
+  color: #ffffff;
+}
+
+/* ── Glassmorphism ───────────────────────────── */
+.glass {
+  background: oklch(from var(--color-bg) l c h / 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Hero stagger (CSS-only) ─────────────────── */
+.hero-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+.hero-fade:nth-child(1) { animation-delay: 0.1s; }
+.hero-fade:nth-child(2) { animation-delay: 0.25s; }
+.hero-fade:nth-child(3) { animation-delay: 0.35s; }
+.hero-fade:nth-child(4) { animation-delay: 0.45s; }
+.hero-fade:nth-child(5) { animation-delay: 0.55s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Scroll-reveal (IO-driven) ───────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Timeline connector ──────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #ffffff, #525252, transparent);
+}
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  background: var(--color-bg);
+}
+
+/* ── Reduced motion ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

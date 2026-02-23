@@ -1,0 +1,56 @@
+---
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 flex hidden flex-col items-center justify-center gap-8 bg-bg/95 backdrop-blur-md"
+>
+  {links.map((l) => (
+    <a
+      href={l.href}
+      class="mobile-link text-2xl font-light text-text-secondary transition-colors hover:text-text"
+    >
+      {l.label}
+    </a>
+  ))}
+</div>
+
+<script>
+  const toggle = document.getElementById("menu-toggle")!;
+  const menu = document.getElementById("mobile-menu")!;
+  const mobileLinks = menu.querySelectorAll(".mobile-link");
+  const spans = toggle.querySelectorAll("span");
+
+  function openMenu() {
+    menu.classList.remove("hidden");
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+    spans[0].style.transform = "rotate(45deg) translate(4px, 4px)";
+    spans[1].style.opacity = "0";
+    spans[2].style.transform = "rotate(-45deg) translate(4px, -4px)";
+    spans[2].style.width = "1.5rem";
+  }
+
+  function closeMenu() {
+    menu.classList.add("hidden");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    spans[0].style.transform = "";
+    spans[1].style.opacity = "";
+    spans[2].style.transform = "";
+    spans[2].style.width = "";
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  mobileLinks.forEach((link) => link.addEventListener("click", closeMenu));
+</script>

@@ -1,0 +1,43 @@
+---
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<header
+  id="site-header"
+  class="glass fixed top-0 z-50 w-full border-b border-border/50 transition-shadow duration-300"
+>
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <span class="gradient-text text-lg font-bold tracking-tight">Alex Kang</span>
+
+    {/* Desktop nav */}
+    <ul class="hidden gap-8 md:flex">
+      {links.map((l) => (
+        <li>
+          <a
+            href={l.href}
+            class="text-sm text-text-secondary transition-colors hover:text-text"
+          >
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    {/* Mobile menu toggle */}
+    <button
+      id="menu-toggle"
+      class="flex flex-col gap-1.5 md:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <span class="block h-0.5 w-6 bg-text-secondary transition-all duration-300" />
+      <span class="block h-0.5 w-6 bg-text-secondary transition-all duration-300" />
+      <span class="block h-0.5 w-4 bg-text-secondary transition-all duration-300" />
+    </button>
+  </nav>
+</header>

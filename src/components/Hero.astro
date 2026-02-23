@@ -1,0 +1,43 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section
+  id="hero"
+  class="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+>
+  {/* Radial glow */}
+  <div
+    class="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2"
+    style="width:800px;height:600px;background:radial-gradient(ellipse,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 40%,transparent 70%);"
+  />
+
+  <div class="relative z-10 max-w-3xl text-center">
+    <p class="hero-fade mb-4 font-mono text-sm tracking-wider text-accent">
+      CO-FOUNDER & CTO
+    </p>
+    <h1 class="hero-fade mb-3 text-5xl font-bold leading-tight tracking-tight md:text-7xl">
+      <span class="gradient-text">{profile.name}</span>
+    </h1>
+    <p class="hero-fade mb-6 text-lg text-text-muted">
+      a.k.a. <span class="text-text-secondary">Spock Woz</span>
+    </p>
+    <p class="hero-fade mb-10 text-lg text-text-secondary md:text-xl">
+      {profile.headline}
+    </p>
+    <div class="hero-fade flex flex-wrap justify-center gap-4">
+      <a
+        href="#experience"
+        class="rounded-full bg-white px-6 py-3 text-sm font-medium text-bg transition-opacity hover:opacity-90"
+      >
+        View Experience
+      </a>
+      <a
+        href="#contact"
+        class="rounded-full border border-border px-6 py-3 text-sm font-medium text-text-secondary transition-colors hover:border-border-hover hover:text-text"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
