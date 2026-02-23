@@ -28,7 +28,7 @@ export interface SkillCategory {
 export const profile = {
   name: "Alex Kang",
   headline: "Building AI agents infrastructure",
-  email: "alex@selanet.io",
+  email: "spockwoz@gmail.com",
   linkedin: "https://www.linkedin.com/in/alex-k-kang",
 
   about: [
