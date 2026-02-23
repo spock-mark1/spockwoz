@@ -10,6 +10,16 @@ export interface Experience {
   tags: string[];
 }
 
+export interface Project {
+  name: string;
+  tagline: string;
+  description: string[];
+  stack: string[];
+  tags: string[];
+  github?: string;
+  url?: string;
+}
+
 export interface SkillCategory {
   title: string;
   skills: string[];
@@ -160,6 +170,24 @@ export const profile = {
       tags: ["Web Technologies", "Semantic HTML", "Real-time Systems", "B2B"],
     },
   ] as Experience[],
+
+  projects: [
+    {
+      name: "Velros.AI",
+      tagline: "AI workforce platform for solo founders",
+      description: [
+        "AI workforce platform that leverages Claude Code CLI to execute business tasks autonomously while building tradeable AI Playbooks.",
+        "Single-session autonomous execution protocol \u2014 Claude self-validates work via native TaskCreate/TaskUpdate without external orchestration",
+        "Cross-domain memory system (project, user, marketing, sales) on SurrealDB with graph + document + vector search",
+        "7-crate Rust workspace with Tokio async runtime for high-concurrency task execution",
+        "Dual-currency token economy: VP (in-app) + $VELROS (BASE blockchain) with burn mechanics and gas abstraction",
+        "Playbook grade system (F1 \u2192 SSS, 24 levels) \u2014 knowledge accumulates, improves, and becomes tradeable on marketplace",
+      ],
+      stack: ["Rust", "Tokio", "SurrealDB", "Redis", "Next.js 16", "React 19", "Supabase", "Telegram Bot", "BASE Blockchain", "Docker"],
+      tags: ["AI Agents", "Autonomous Execution", "Token Economy", "Knowledge Graph", "Rust Backend"],
+      github: "https://github.com/spock-mark1/velros-ai",
+    },
+  ] as Project[],
 
   skills: [
     {

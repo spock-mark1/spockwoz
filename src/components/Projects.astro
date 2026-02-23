@@ -1,0 +1,53 @@
+---
+import { profile } from "../data/profile";
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section id="projects" class="mx-auto max-w-3xl px-6 py-24">
+  <SectionHeading title="Projects" />
+  <div class="space-y-8">
+    {profile.projects.map((p) => (
+      <div class="reveal rounded-xl border border-border bg-card p-6 transition-colors hover:border-border-hover">
+        <div class="mb-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <h3 class="text-xl font-semibold text-text">{p.name}</h3>
+          {p.github && (
+            <a
+              href={p.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs text-text-muted transition-colors hover:text-text-secondary"
+            >
+              GitHub &rarr;
+            </a>
+          )}
+        </div>
+        <p class="mb-4 text-sm text-text-secondary">{p.tagline}</p>
+
+        <ul class="mb-5 space-y-1.5 text-sm text-text-secondary">
+          {p.description.map((d) => (
+            <li class="flex gap-2">
+              <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+              {d}
+            </li>
+          ))}
+        </ul>
+
+        <div class="mb-4 flex flex-wrap gap-2">
+          {p.stack.map((s) => (
+            <span class="rounded-full border border-border bg-elevated px-3 py-1 text-xs font-medium text-text-secondary">
+              {s}
+            </span>
+          ))}
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          {p.tags.map((t) => (
+            <span class="rounded-full border border-border-hover px-3 py-1 text-xs text-text-muted">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
