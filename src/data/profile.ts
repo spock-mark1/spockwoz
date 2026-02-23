@@ -41,8 +41,8 @@ export const profile = {
       company: "SelaNet AI",
       role: "Co-Founder & CTO / Project Lead",
       type: "Full-time",
-      period: "2024 - Present",
-      duration: "2 yrs",
+      period: "2025 - Present",
+      duration: "1 yr",
       location: "Seoul, South Korea",
       mode: "On-site",
       description: [
@@ -58,8 +58,8 @@ export const profile = {
       company: "BcLabs",
       role: "CTO / CPO | Coinvestor",
       type: "Full-time",
-      period: "2024 - Present",
-      duration: "2 yrs",
+      period: "2024 - 2025",
+      duration: "1 yr",
       location: "Seoul, South Korea",
       mode: "On-site",
       description: [
