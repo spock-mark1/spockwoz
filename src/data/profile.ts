@@ -32,13 +32,13 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/alex-k-kang",
 
   about: [
-    "As Co-Founder and CTO of SelaNet, I lead the development of infrastructure that enables AI agents to operate seamlessly on real websites through distributed browser nodes, semantic data extraction, and orchestration systems. My work focuses on creating solutions for AI challenges like login walls, CAPTCHAs, and complex website interactions while supporting our product strategy, roadmap, and go-to-market efforts.",
+    "As Co-Founder and CTO of SelaNet AI, I lead the development of infrastructure that enables AI agents to operate seamlessly on real websites through distributed browser nodes, semantic data extraction, and orchestration systems. My work focuses on creating solutions for AI challenges like login walls, CAPTCHAs, and complex website interactions while supporting our product strategy, roadmap, and go-to-market efforts.",
     "With over two decades of experience in search platforms, cryptocurrency exchanges, and trading systems, I bring extensive expertise in AI agents, distributed systems, and concurrent engineering. My background in building high-performance, reliable systems shapes my approach to designing AI infrastructure that scales effectively and operates with precision.",
   ],
 
   experience: [
     {
-      company: "Sela Network",
+      company: "SelaNet AI",
       role: "Co-Founder & CTO / Project Lead",
       type: "Full-time",
       period: "2024 - Present",
@@ -46,7 +46,7 @@ export const profile = {
       location: "Seoul, South Korea",
       mode: "On-site",
       description: [
-        "Leading technical vision for Selanetwork \u2014 infrastructure for AI agents to use real websites through real browser environments.",
+        "Leading technical vision for SelaNet AI \u2014 infrastructure for AI agents to use real websites through real browser environments.",
         "Distributed browser nodes with P2P networking and NAT traversal",
         "Semantic layer that extracts structured data from arbitrary web pages",
         "Orchestration system for multi-step, long-running agent tasks",
